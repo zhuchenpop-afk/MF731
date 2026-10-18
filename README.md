@@ -12,6 +12,7 @@ self-contained and runs top to bottom.
 | `var_est_homework/` | Portfolio VaR | One-day 95% VaR of a cap-weighted MSFT/AAPL/GOOGL portfolio: empirical vs. normal with EWMA mean and covariance, under the full, linearized and quadratic loss operators |
 | `var_10day_homework/` | Ten-day VaR | Delta-hedged short put: square-root-of-time rule vs. a daily-rebalanced ten-day simulation (40,000 paths), with a delta-gamma explanation of the gap |
 | `var_backtest_homework/` | VaR backtesting | S&P 500, 2016–2026: rolling empirical vs. EWMA-normal one-day VaR, exceedance counts and their 95% confidence interval |
+| `scenario_homework/` | Scenario analysis | Delta-hedged option on the squared spread of two stocks: worst-case and weighted scenario risk measures over 3,888 return/volatility/correlation scenarios |
 | `SPY_data.csv` | — | Cached SPY closing prices, so the volatility notebook reproduces offline |
 | `*.png` | — | Figures produced by the notebooks |
 
@@ -26,8 +27,8 @@ homework folder also has its own `requirements.txt` and `README.md`.
 
 The notebooks that use market data read a cached CSV (`SPY_data.csv`, and the
 `*_prices.csv` file inside the portfolio-VaR and backtest folders) and only contact
-Yahoo Finance when that file is missing. The loss and ten-day VaR notebooks need no
-data at all — every input is a parameter.
+Yahoo Finance when that file is missing. The loss, ten-day VaR and scenario notebooks need
+no data at all — every input is a parameter.
 
 Every notebook ends with a self-check cell that verifies its internal
 consistency and prints `ALL CHECKS PASSED`. Random seeds are fixed, so re-running
