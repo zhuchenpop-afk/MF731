@@ -13,6 +13,7 @@ self-contained and runs top to bottom.
 | `var_10day_homework/` | Ten-day VaR | Delta-hedged short put: square-root-of-time rule vs. a daily-rebalanced ten-day simulation (40,000 paths), with a delta-gamma explanation of the gap |
 | `var_backtest_homework/` | VaR backtesting | S&P 500, 2016–2026: rolling empirical vs. EWMA-normal one-day VaR, exceedance counts and their 95% confidence interval |
 | `scenario_homework/` | Scenario analysis | Delta-hedged option on the squared spread of two stocks: worst-case and weighted scenario risk measures over 3,888 return/volatility/correlation scenarios |
+| `stress_test_homework/` | Stress testing | Cap-weighted MSFT/AAPL portfolio: EWMA-normal one-day VaR, square-root-of-time ten-day VaR and 3× capital, then a −5σ shock to AAPL (−5 conditional σ to MSFT), EWMA-updated covariances and 50,000 simulated ten-day paths |
 | `SPY_data.csv` | — | Cached SPY closing prices, so the volatility notebook reproduces offline |
 | `*.png` | — | Figures produced by the notebooks |
 
@@ -26,7 +27,7 @@ Then open any notebook in VS Code, select a Python kernel, and **Run All**. Each
 homework folder also has its own `requirements.txt` and `README.md`.
 
 The notebooks that use market data read a cached CSV (`SPY_data.csv`, and the
-`*_prices.csv` file inside the portfolio-VaR and backtest folders) and only contact
+`*_prices.csv` file inside the portfolio-VaR, backtest and stress-test folders) and only contact
 Yahoo Finance when that file is missing. The loss, ten-day VaR and scenario notebooks need
 no data at all — every input is a parameter.
 
